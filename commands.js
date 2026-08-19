@@ -19,5 +19,4 @@ function applySignature(event) {
   }
 }
 
-Office.actions.associate("onNewMessageComposeHandler", applySignature);
-Office.actions.associate("onMessageFromChangedHandler", applySignature);
+Office.actions.associate("applySignature", applySignature);

@@ -7,7 +7,7 @@
   xsi:type="MailApp">
 
   <Id>5b0b4c12-aceb-42bc-a2f4-fc1bd69e6713</Id>
-  <Version>1.0.0.0</Version>
+  <Version>1.0.0.1</Version>
   <ProviderName>United Power Group</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="UPG Signature"/>
@@ -33,7 +33,7 @@
   <FormSettings>
     <Form xsi:type="ItemRead">
       <DesktopSettings>
-        <SourceLocation DefaultValue="https://kalvinbanks.github.io/upg-signature-addin/commands.html"/>
+        <SourceLocation DefaultValue="https://kalvinbanks.github.io/upg-signature-addin/taskpane.html"/>
         <RequestedHeight>250</RequestedHeight>
       </DesktopSettings>
     </Form>
@@ -48,6 +48,7 @@
 
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
     <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
+      <Description resid="residAppDesc"/>
 
       <Requirements>
         <bt:Sets DefaultMinVersion="1.10">
@@ -59,20 +60,41 @@
         <Host xsi:type="MailHost">
 
           <Runtimes>
-            <Runtime resid="WebViewRuntime.Url">
-              <Override type="javascript" resid="JSRuntime.Url"/>
+            <Runtime resid="Autorun">
+              <Override type="javascript" resid="runtimeJs"/>
             </Runtime>
           </Runtimes>
 
           <DesktopFormFactor>
-            <FunctionFile resid="WebViewRuntime.Url"/>
+
+            <ExtensionPoint xsi:type="MessageComposeCommandSurface">
+              <OfficeTab id="TabDefault">
+                <Group id="upgSigGroup">
+                  <Label resid="residGroupLabel"/>
+                  <Control xsi:type="Button" id="upgSigButton">
+                    <Label resid="residButtonLabel"/>
+                    <Supertip>
+                      <Title resid="residButtonLabel"/>
+                      <Description resid="residButtonTip"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="Icon16x16"/>
+                      <bt:Image size="32" resid="Icon32x32"/>
+                      <bt:Image size="80" resid="Icon80x80"/>
+                    </Icon>
+                    <Action xsi:type="ShowTaskpane">
+                      <SourceLocation resid="residTaskpane"/>
+                    </Action>
+                  </Control>
+                </Group>
+              </OfficeTab>
+            </ExtensionPoint>
 
             <ExtensionPoint xsi:type="LaunchEvent">
               <LaunchEvents>
-                <LaunchEvent Type="OnNewMessageCompose" FunctionName="onNewMessageComposeHandler"/>
-                <LaunchEvent Type="OnMessageFromChanged" FunctionName="onMessageFromChangedHandler"/>
+                <LaunchEvent Type="OnNewMessageCompose" FunctionName="applySignature"/>
               </LaunchEvents>
-              <SourceLocation resid="WebViewRuntime.Url"/>
+              <SourceLocation resid="Autorun"/>
             </ExtensionPoint>
 
           </DesktopFormFactor>
@@ -81,19 +103,22 @@
 
       <Resources>
         <bt:Images>
-          <bt:Image id="Icon.16x16" DefaultValue="https://kalvinbanks.github.io/upg-signature-addin/img/icon-16.png"/>
-          <bt:Image id="Icon.32x32" DefaultValue="https://kalvinbanks.github.io/upg-signature-addin/img/icon-32.png"/>
-          <bt:Image id="Icon.80x80" DefaultValue="https://kalvinbanks.github.io/upg-signature-addin/img/icon-80.png"/>
+          <bt:Image id="Icon16x16" DefaultValue="https://kalvinbanks.github.io/upg-signature-addin/img/icon-16.png"/>
+          <bt:Image id="Icon32x32" DefaultValue="https://kalvinbanks.github.io/upg-signature-addin/img/icon-32.png"/>
+          <bt:Image id="Icon80x80" DefaultValue="https://kalvinbanks.github.io/upg-signature-addin/img/icon-80.png"/>
         </bt:Images>
         <bt:Urls>
-          <bt:Url id="WebViewRuntime.Url" DefaultValue="https://kalvinbanks.github.io/upg-signature-addin/commands.html"/>
-          <bt:Url id="JSRuntime.Url" DefaultValue="https://kalvinbanks.github.io/upg-signature-addin/commands.js"/>
+          <bt:Url id="residTaskpane" DefaultValue="https://kalvinbanks.github.io/upg-signature-addin/taskpane.html"/>
+          <bt:Url id="Autorun" DefaultValue="https://kalvinbanks.github.io/upg-signature-addin/commands.html"/>
+          <bt:Url id="runtimeJs" DefaultValue="https://kalvinbanks.github.io/upg-signature-addin/commands.js"/>
         </bt:Urls>
         <bt:ShortStrings>
-          <bt:String id="GroupLabel" DefaultValue="UPG Signature"/>
+          <bt:String id="residGroupLabel" DefaultValue="UPG Signature"/>
+          <bt:String id="residButtonLabel" DefaultValue="Insert signature"/>
         </bt:ShortStrings>
         <bt:LongStrings>
-          <bt:String id="GroupTooltip" DefaultValue="United Power Group email signature"/>
+          <bt:String id="residAppDesc" DefaultValue="Applies the United Power Group email signature when composing a message."/>
+          <bt:String id="residButtonTip" DefaultValue="Insert your United Power Group email signature."/>
         </bt:LongStrings>
       </Resources>
 
