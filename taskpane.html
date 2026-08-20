@@ -4,10 +4,82 @@
   <meta charset="UTF-8" />
   <title>UPG Signature</title>
   <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
-  <style>body{font-family:Arial,Helvetica,sans-serif;padding:16px;color:#231f20}</style>
+  <script src="commands.js"></script>
+  <style>
+    body { font-family: Segoe UI, Arial, sans-serif; padding: 14px; font-size: 13px; color: #231f20; }
+    h3 { margin: 0 0 10px; }
+    button { font-size: 14px; padding: 8px 14px; margin: 8px 0; cursor: pointer; }
+    pre { background: #f4f4f4; padding: 8px; white-space: pre-wrap; word-break: break-all; font-size: 12px; }
+    .ok { color: #1d5632; font-weight: bold; }
+    .bad { color: #b00; font-weight: bold; }
+  </style>
 </head>
 <body>
-  <h3>UPG Signature</h3>
-  <p>Your United Power Group signature is applied automatically when you start a new message.</p>
+  <h3>UPG Signature — diagnostics</h3>
+  <div id="env">checking…</div>
+  <button id="go">Insert signature now</button>
+  <div id="out"></div>
+
+  <script>
+    function line(s, cls) {
+      var d = document.createElement('div');
+      if (cls) { d.className = cls; }
+      d.innerHTML = s;
+      document.getElementById('out').appendChild(d);
+    }
+
+    Office.onReady(function (info) {
+      var env = document.getElementById('env');
+      var rows = [];
+      rows.push('<b>host:</b> ' + info.host + ' &nbsp; <b>platform:</b> ' + info.platform);
+      try {
+        var p = Office.context.mailbox.userProfile;
+        rows.push('<b>profile address:</b> <code>' + (p && p.emailAddress) + '</code>');
+      } catch (e) { rows.push('<b>profile address:</b> ERROR ' + e.message); }
+      try {
+        var keys = [];
+        for (var k in SIGNATURES) { if (SIGNATURES.hasOwnProperty(k)) { keys.push(k); } }
+        rows.push('<b>signature keys:</b> <code>' + keys.join(', ') + '</code>');
+      } catch (e) { rows.push('<b>signature map:</b> NOT LOADED — ' + e.message); }
+      var sets = ['1.9','1.10','1.11','1.12','1.13','1.14'];
+      var sup = [];
+      for (var i = 0; i < sets.length; i++) {
+        try { if (Office.context.requirements.isSetSupported('Mailbox', sets[i])) { sup.push(sets[i]); } } catch (e) {}
+      }
+      rows.push('<b>Mailbox sets supported:</b> ' + (sup.join(', ') || 'none detected'));
+      rows.push('<b>setSignatureAsync present:</b> ' +
+        (Office.context.mailbox.item && typeof Office.context.mailbox.item.body.setSignatureAsync === 'function'));
+      env.innerHTML = rows.join('<br>');
+    });
+
+    document.getElementById('go').onclick = function () {
+      document.getElementById('out').innerHTML = '';
+      var html;
+      try {
+        var keys = [];
+        for (var k in SIGNATURES) { if (SIGNATURES.hasOwnProperty(k)) { keys.push(k); } }
+        var addr = '';
+        try { addr = String(Office.context.mailbox.userProfile.emailAddress).toLowerCase(); } catch (e) {}
+        html = SIGNATURES[addr] || SIGNATURES[keys[0]];
+        if (!html) { line('No signature found in map.', 'bad'); return; }
+      } catch (e) { line('Could not read signature map: ' + e.message, 'bad'); return; }
+
+      try {
+        Office.context.mailbox.item.body.setSignatureAsync(
+          html, { coercionType: Office.CoercionType.Html },
+          function (r) {
+            if (r.status === Office.AsyncResultStatus.Succeeded) {
+              line('setSignatureAsync SUCCEEDED — check the message body.', 'ok');
+            } else {
+              line('setSignatureAsync FAILED: ' + (r.error && r.error.name) + ' — ' + (r.error && r.error.message), 'bad');
+              line('<pre>' + JSON.stringify(r.error) + '</pre>');
+            }
+          }
+        );
+      } catch (e) {
+        line('threw: ' + e.message, 'bad');
+      }
+    };
+  </script>
 </body>
 </html>
