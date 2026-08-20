@@ -1,5 +1,4 @@
-/* UPG signature add-in - event-based activation */
-var SIGNATURES = {
+{
   "a.ben@upg.energy": "<table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"font-family:Arial,Helvetica,sans-serif;background:#ffffff;\"> <tr> <td style=\"vertical-align:middle;\"><a href=\"https://www.upg.energy\" style=\"text-decoration:none;\"><img src=\"https://kalvinbanks.github.io/upg-signature-addin/img/a-ben.jpg\" width=\"310\" height=\"197\" alt=\"United Power Group\" style=\"display:block;border:0;\"></a></td> <td style=\"vertical-align:middle;padding:8px 0 8px 22px;border-left:3px solid #76b82a;\"> <div style=\"font-size:21px;font-weight:bold;color:#231f20;letter-spacing:.2px;\">Ameia Ben</div> <div style=\"font-size:13.5px;color:#231f20;margin-top:2px;\">Energy Analyst & Account Manager</div> <div style=\"margin-top:10px;font-size:14px;font-weight:bold;color:#231f20;\"><a href=\"tel:+19726365753\" style=\"color:#231f20;text-decoration:none;\">(972) 636-5753</a></div> <div style=\"margin-top:8px;font-size:14px;\"> <a href=\"mailto:a.ben@upg.energy\" style=\"color:#231f20;text-decoration:none;\">a.ben@upg.energy</a> &nbsp;&nbsp;•&nbsp;&nbsp;<a href=\"https://www.upg.energy\" style=\"color:#1d5632;font-weight:bold;text-decoration:none;\">www.upg.energy</a> </div> <div style=\"margin-top:9px;font-size:11px;color:#6d6e71;\">601 S. Railroad ST, Lewisville, TX 75057</div> </td> </tr> </table>",
   "a.bowers@upg.energy": "<table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"font-family:Arial,Helvetica,sans-serif;background:#ffffff;\"> <tr> <td style=\"vertical-align:middle;\"><a href=\"https://www.upg.energy\" style=\"text-decoration:none;\"><img src=\"https://kalvinbanks.github.io/upg-signature-addin/img/a-bowers.jpg\" width=\"310\" height=\"197\" alt=\"United Power Group\" style=\"display:block;border:0;\"></a></td> <td style=\"vertical-align:middle;padding:8px 0 8px 22px;border-left:3px solid #76b82a;\"> <div style=\"font-size:21px;font-weight:bold;color:#231f20;letter-spacing:.2px;\">Allynt Bowers</div> <div style=\"font-size:13.5px;color:#231f20;margin-top:2px;\">Customer Journey Manager</div> <div style=\"margin-top:10px;font-size:14px;font-weight:bold;color:#231f20;\"><a href=\"tel:+19796617236\" style=\"color:#231f20;text-decoration:none;\">(979) 661-7236</a></div> <div style=\"margin-top:8px;font-size:14px;\"> <a href=\"mailto:a.bowers@upg.energy\" style=\"color:#231f20;text-decoration:none;\">a.bowers@upg.energy</a> &nbsp;&nbsp;•&nbsp;&nbsp;<a href=\"https://www.upg.energy\" style=\"color:#1d5632;font-weight:bold;text-decoration:none;\">www.upg.energy</a> </div> <div style=\"margin-top:9px;font-size:11px;color:#6d6e71;\">601 S. Railroad ST, Lewisville, TX 75057</div> </td> </tr> </table>",
   "a.diggs@upg.energy": "<table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"font-family:Arial,Helvetica,sans-serif;background:#ffffff;\"> <tr> <td style=\"vertical-align:middle;\"><a href=\"https://www.upg.energy\" style=\"text-decoration:none;\"><img src=\"https://kalvinbanks.github.io/upg-signature-addin/img/a-diggs.jpg\" width=\"310\" height=\"197\" alt=\"United Power Group\" style=\"display:block;border:0;\"></a></td> <td style=\"vertical-align:middle;padding:8px 0 8px 22px;border-left:3px solid #76b82a;\"> <div style=\"font-size:21px;font-weight:bold;color:#231f20;letter-spacing:.2px;\">Alex Diggs</div> <div style=\"font-size:13.5px;color:#231f20;margin-top:2px;\">Sales Director</div> <div style=\"margin-top:10px;font-size:14px;font-weight:bold;color:#231f20;\"><a href=\"tel:+19723254466\" style=\"color:#231f20;text-decoration:none;\">(972) 325-4466</a>&nbsp;&nbsp;•&nbsp;&nbsp;<a href=\"tel:+13462746530\" style=\"color:#231f20;text-decoration:none;\">(346) 274-6530</a>&nbsp;<span style=\"color:#888;font-size:11px;\">(mobile)</span></div> <div style=\"margin-top:8px;font-size:14px;\"> <a href=\"mailto:a.diggs@upg.energy\" style=\"color:#231f20;text-decoration:none;\">a.diggs@upg.energy</a> &nbsp;&nbsp;•&nbsp;&nbsp;<a href=\"https://www.upg.energy\" style=\"color:#1d5632;font-weight:bold;text-decoration:none;\">www.upg.energy</a> </div> <div style=\"margin-top:9px;font-size:11px;color:#6d6e71;\">601 S. Railroad ST, Lewisville, TX 75057</div> </td> </tr> </table>",
@@ -43,64 +42,4 @@ var SIGNATURES = {
   "u.acosta@upg.energy": "<table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"font-family:Arial,Helvetica,sans-serif;background:#ffffff;\"> <tr> <td style=\"vertical-align:middle;\"><a href=\"https://www.upg.energy\" style=\"text-decoration:none;\"><img src=\"https://kalvinbanks.github.io/upg-signature-addin/img/u-acosta.jpg\" width=\"310\" height=\"197\" alt=\"United Power Group\" style=\"display:block;border:0;\"></a></td> <td style=\"vertical-align:middle;padding:8px 0 8px 22px;border-left:3px solid #76b82a;\"> <div style=\"font-size:21px;font-weight:bold;color:#231f20;letter-spacing:.2px;\">Uriel Acosta</div> <div style=\"font-size:13.5px;color:#231f20;margin-top:2px;\">Energy Analyst & Account Manager</div> <div style=\"margin-top:10px;font-size:14px;font-weight:bold;color:#231f20;\"><a href=\"tel:+19724747662\" style=\"color:#231f20;text-decoration:none;\">(972) 474-7662</a></div> <div style=\"margin-top:8px;font-size:14px;\"> <a href=\"mailto:u.acosta@upg.energy\" style=\"color:#231f20;text-decoration:none;\">u.acosta@upg.energy</a> &nbsp;&nbsp;•&nbsp;&nbsp;<a href=\"https://www.upg.energy\" style=\"color:#1d5632;font-weight:bold;text-decoration:none;\">www.upg.energy</a> </div> <div style=\"margin-top:9px;font-size:11px;color:#6d6e71;\">601 S. Railroad ST, Lewisville, TX 75057</div> </td> </tr> </table>",
   "v.fincher@upg.energy": "<table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"font-family:Arial,Helvetica,sans-serif;background:#ffffff;\"> <tr> <td style=\"vertical-align:middle;\"><a href=\"https://www.upg.energy\" style=\"text-decoration:none;\"><img src=\"https://kalvinbanks.github.io/upg-signature-addin/img/v-fincher.jpg\" width=\"310\" height=\"197\" alt=\"United Power Group\" style=\"display:block;border:0;\"></a></td> <td style=\"vertical-align:middle;padding:8px 0 8px 22px;border-left:3px solid #76b82a;\"> <div style=\"font-size:21px;font-weight:bold;color:#231f20;letter-spacing:.2px;\">Victor Fincher</div> <div style=\"font-size:13.5px;color:#231f20;margin-top:2px;\">Energy Analyst & Account Manager</div> <div style=\"margin-top:10px;font-size:14px;font-weight:bold;color:#231f20;\"><a href=\"tel:+19726368330\" style=\"color:#231f20;text-decoration:none;\">(972) 636-8330</a></div> <div style=\"margin-top:8px;font-size:14px;\"> <a href=\"mailto:v.fincher@upg.energy\" style=\"color:#231f20;text-decoration:none;\">v.fincher@upg.energy</a> &nbsp;&nbsp;•&nbsp;&nbsp;<a href=\"https://www.upg.energy\" style=\"color:#1d5632;font-weight:bold;text-decoration:none;\">www.upg.energy</a> </div> <div style=\"margin-top:9px;font-size:11px;color:#6d6e71;\">601 S. Railroad ST, Lewisville, TX 75057</div> </td> </tr> </table>",
   "w.mcculloch@upg.energy": "<table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"font-family:Arial,Helvetica,sans-serif;background:#ffffff;\"> <tr> <td style=\"vertical-align:middle;\"><a href=\"https://www.upg.energy\" style=\"text-decoration:none;\"><img src=\"https://kalvinbanks.github.io/upg-signature-addin/img/w-mcculloch.jpg\" width=\"310\" height=\"197\" alt=\"United Power Group\" style=\"display:block;border:0;\"></a></td> <td style=\"vertical-align:middle;padding:8px 0 8px 22px;border-left:3px solid #76b82a;\"> <div style=\"font-size:21px;font-weight:bold;color:#231f20;letter-spacing:.2px;\">William McCulloch</div> <div style=\"font-size:13.5px;color:#231f20;margin-top:2px;\">Energy Analyst & Account Manager</div> <div style=\"margin-top:10px;font-size:14px;font-weight:bold;color:#231f20;\"><a href=\"tel:+19726368330\" style=\"color:#231f20;text-decoration:none;\">(972) 636-8330</a></div> <div style=\"margin-top:8px;font-size:14px;\"> <a href=\"mailto:w.mcculloch@upg.energy\" style=\"color:#231f20;text-decoration:none;\">w.mcculloch@upg.energy</a> &nbsp;&nbsp;•&nbsp;&nbsp;<a href=\"https://www.upg.energy\" style=\"color:#1d5632;font-weight:bold;text-decoration:none;\">www.upg.energy</a> </div> <div style=\"margin-top:9px;font-size:11px;color:#6d6e71;\">601 S. Railroad ST, Lewisville, TX 75057</div> </td> </tr> </table>"
-};
-
-function pickSignature() {
-  var email = "";
-  try {
-    var p = Office.context.mailbox.userProfile;
-    if (p && p.emailAddress) { email = String(p.emailAddress).toLowerCase(); }
-  } catch (e) { email = ""; }
-
-  if (SIGNATURES[email]) { return SIGNATURES[email]; }
-
-  var keys = [];
-  for (var k in SIGNATURES) { if (SIGNATURES.hasOwnProperty(k)) { keys.push(k); } }
-  if (keys.length === 1) { return SIGNATURES[keys[0]]; }
-  return null;
 }
-
-/* Fallback for Outlook on the web, where the sample uses body.setAsync
-   rather than setSignatureAsync. */
-function writeViaBody(html, event) {
-  try {
-    Office.context.mailbox.item.body.setAsync(
-      "<br/><br/>" + html,
-      { coercionType: "html", asyncContext: event },
-      function (r) { r.asyncContext.completed(); }
-    );
-  } catch (e) {
-    event.completed();
-  }
-}
-
-function applySignature(event) {
-  var html = null;
-  try { html = pickSignature(); } catch (e) { html = null; }
-  if (!html) { event.completed(); return; }
-
-  var item = Office.context.mailbox.item;
-  if (item && item.body && typeof item.body.setSignatureAsync === "function") {
-    try {
-      item.body.setSignatureAsync(
-        html,
-        { coercionType: Office.CoercionType.Html },
-        function (result) {
-          if (result && result.status === Office.AsyncResultStatus.Failed) {
-            writeViaBody(html, event);
-            return;
-          }
-          event.completed();
-        }
-      );
-      return;
-    } catch (e) { /* fall through to body.setAsync */ }
-  }
-  writeViaBody(html, event);
-}
-
-Office.actions.associate("applySignature", applySignature);
-
-/* REQUIRED for event-based activation on Outlook on the web and new Outlook.
-   Without this the runtime never signals readiness and launch events never fire. */
-Office.onReady();
